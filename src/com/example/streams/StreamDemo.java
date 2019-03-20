@@ -36,5 +36,11 @@ public class StreamDemo {
         boolean length = input.stream().allMatch(p1);
         System.out.println("String with 0 length does not exist : "+length);
         System.out.println("------------------------------------------");
+        
+        // Display Strings whose length is greater than 3 and limit the results to 2.
+        input.stream().filter(str -> str.length() > 3).limit(2).forEach(System.out::println);
+        System.out.println("------------------------------------------");
+        
+        
     }
 }
