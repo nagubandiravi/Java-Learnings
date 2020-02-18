@@ -61,6 +61,10 @@ public class CollectorsDemo {
         
         // Join Names using '-' delimeter and * as prefix and suffix
         System.out.println("Join Names using '-' delimeter and * as prefix and suffix "+persons.stream().map(e -> e.getName()).collect(Collectors.joining("-", "*", "*")));
+        
+        // Group names into lists based on criteria: age > 20 or not
+        Map<Boolean, List<Person>> partition = persons.stream().collect(Collectors.partitioningBy(e -> e.getAge() > 20));
+        System.out.println("Partitioned Lists-"+partition);
                 
     }
     
